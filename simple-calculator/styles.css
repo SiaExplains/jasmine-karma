@@ -1,0 +1,47 @@
+.body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(105, 133, 137);
+    padding: 0;
+    margin: 0;
+    
+}
+
+.title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 52px;
+    color: rgb(208, 229, 233);
+}
+
+.input {
+    
+    width: 100%;
+    font-size: 48px;
+    text-align: center;
+    padding: 5px;
+    color: rgb(105, 133, 137);
+    background-color:  rgb(208, 229, 233);
+    margin: auto;
+}
+
+.center-container {
+    width: 500px;
+    margin: 0 auto;
+}
+.result-container{
+    margin: 50px auto 0;
+}
+
+
+.result-container .title {
+    font-size: 18px;
+    color: white;
+}
+
+#result {
+    color: white;
+    width: 100%;
+    display: block;
+    font-size: 48px;
+    text-align: center;
+}

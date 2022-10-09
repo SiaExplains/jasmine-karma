@@ -6,11 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Calculator</title>
     <script src="./calculator.js"></script>
+    
     <script src="./main.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link href="./styles.css" rel="stylesheet" />
 </head>
-<body>
-    <h2>Simple Calculator</h2>
-    <input type="text" onchange="calculate(this.value)" />
-    <div>Result <span id="result"></span></div>
+<body class="body">
+    <h2 class="title">Simple Calculator</h2>
+    <div class="center-container">
+        <label for=""></label>
+        <input title="Enter input here" class="input" type="text" onchange="calculate(this.value)" placeholder="e.g: 2+2" />
+        <div class="result-container">
+            <div class="title">
+                Result
+            </div>
+            <span id="result"></span>
+        </div>
+    </div>
 </body>
 </html>
