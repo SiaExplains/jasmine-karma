@@ -1,14 +1,29 @@
 describe('calculator.js',() => {
     it('should add number to total', ()=> {
-        // TODO: write expectaion for adding function
+        const calculator = new Calculator();
+        const expectedNumber = 5;
+        calculator.add(5);
+        expect(calculator.total).toEqual(expectedNumber);
     });
     it('should subtract number from total', ()=> {
-        // TODO: write expectaion for subtracting function
+        const calculator = new Calculator();
+        const expectedNumber = 25;
+        calculator.total = 30;
+        calculator.subtract(5);
+        expect(calculator.total).toEqual(expectedNumber);
     });
     it('should multiply total by number', ()=> {
-        // TODO: write expectaion for multiplication function
+        const calculator = new Calculator();
+        const expectedNumber = 500;
+        calculator.total = 100;
+        calculator.multiply(5);
+        expect(calculator.total).toEqual(expectedNumber);
     });
     it('should divide total by number', ()=> {
-        // TODO: write expectaion for divison function
+        const calculator = new Calculator();
+        const expectedNumber = 10;
+        calculator.total = 100;
+        calculator.divide(10);
+        expect(calculator.total).toEqual(expectedNumber);
     });
 });
