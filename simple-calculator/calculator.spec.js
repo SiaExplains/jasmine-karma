@@ -61,6 +61,7 @@ describe('calculator.js',() => {
         
         expect(calculator.add(20)).toBe(70);
         expect(calculator.total).toMatch(/-?\d+/);
+        expect(typeof calculator.total).toMatch('number');
     });
 
 });
