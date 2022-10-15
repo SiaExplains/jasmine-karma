@@ -72,5 +72,13 @@ describe('calculator.js',() => {
         expect(null).not.toEqual(jasmine.anything());
         //anything cannot be undefined!
         expect(undefined).not.toEqual(jasmine.anything());
+    });
+
+    it('use a custom matcher', () => {
+        jasmine.addMatchers(customMatchers);
+
+        const calculator = new Calculator();
+        
+        expect(calculator).toBeCalculator();
     })
 });
