@@ -63,5 +63,14 @@ describe('calculator.js',() => {
         expect(calculator.total).toMatch(/-?\d+/);
         expect(typeof calculator.total).toMatch('number');
     });
-
+    it('asymmetric matchers!', () => {
+        const calculator = new Calculator();
+        calculator.total = 50;
+        expect(calculator.total).toEqual(jasmine.anything());
+        expect(() => {}).toEqual(jasmine.anything());
+        // anything cannot be null!
+        expect(null).not.toEqual(jasmine.anything());
+        //anything cannot be undefined!
+        expect(undefined).not.toEqual(jasmine.anything());
+    })
 });
