@@ -54,4 +54,13 @@ describe('calculator.js',() => {
         expect(wrapperFunction).toThrowError(Error, 'Cannot divide by zero');
     });
 
+    it('returns total', () => {
+        const calculator = new Calculator();
+        calculator.total = 50;
+
+        
+        expect(calculator.add(20)).toBe(70);
+        expect(calculator.total).toMatch(/-?\d+/);
+    });
+
 });
