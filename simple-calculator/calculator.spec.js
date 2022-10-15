@@ -26,4 +26,26 @@ describe('calculator.js',() => {
         calculator.divide(10);
         expect(calculator.total).toEqual(expectedNumber);
     });
+    it('should initialize the total value', () => {
+        const calculator = new Calculator();
+        expect(calculator.total).toBe(0);
+    });
+    it('has constructor', () => {
+        const calculator1 = new Calculator();
+        const calculator2 = new Calculator();
+        expect(calculator1).toEqual(calculator2);
+    });
+    it('can be instanstiated', () => {
+        const calculator1 = new Calculator();
+        const calculator2 = new Calculator();
+        expect(calculator1).toBeTruthy();
+        expect(calculator2).toBeTruthy();
+    });
+    it('does not handle NaN', () => {
+        const calculator = new Calculator();
+        
+        calculator.multiply('a');
+        expect(calculator.total).toBeNaN();
+    });
+    
 });
