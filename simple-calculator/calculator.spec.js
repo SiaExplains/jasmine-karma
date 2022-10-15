@@ -41,11 +41,17 @@ describe('calculator.js',() => {
         expect(calculator1).toBeTruthy();
         expect(calculator2).toBeTruthy();
     });
-    it('does not handle NaN', () => {
+    it('handles divide by zero', () => {
         const calculator = new Calculator();
+        calculator.total = 100;
+        // we should always test real function inside a wrapper function!
+        const wrapperFunction = () => {
+            calculator.divide(0);
+        }
         
-        calculator.multiply('a');
-        expect(calculator.total).toBeNaN();
+        expect(wrapperFunction).toThrow();
+        expect(wrapperFunction).toThrowError(Error);
+        expect(wrapperFunction).toThrowError(Error, 'Cannot divide by zero');
     });
-    
+
 });
