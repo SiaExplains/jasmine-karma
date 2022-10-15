@@ -80,5 +80,12 @@ describe('calculator.js',() => {
         const calculator = new Calculator();
         
         expect(calculator).toBeCalculator();
-    })
+    });
+
+    
+    it('use a third-party toBeNumber matcher', () => {
+        // don't need to register with jasmine.addMatchers(...)
+        const calculator = new Calculator();        
+        expect(calculator.total).toBeNumber();
+    });
 });
