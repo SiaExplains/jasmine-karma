@@ -1,6 +1,24 @@
 describe('main.js', () => {
     describe('calculate()', () => {
-        xit('validates expression');
+        it('validates expression when the first number is invalid', () => {
+            spyOn(window, 'updateResult').and.stub();
+            calculate('a+3');
+            expect(window.updateResult).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledWith('Expression not recognized.');
+            expect(window.updateResult).toHaveBeenCalledTimes(1);
+        });
+        it('validates expression when the second number is invalid', () => {
+            spyOn(window, 'updateResult'); // we removed the `.and.stub()` becuase it will be there as default
+            calculate('3+a');
+            expect(window.updateResult).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledTimes(1);
+        });
+        it('validates expression when operation is invalid', () => {
+            spyOn(window, 'updateResult');
+            calculate('a_3');
+            expect(window.updateResult).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledTimes(1);
+        });
         xit('calls add');
         xit('calls subtract');
         xit('calls multiply');

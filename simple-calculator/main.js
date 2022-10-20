@@ -12,7 +12,7 @@ function calculate(inputValue) {
     const numberB = Number(numbers[1]);
     const matchOperation = inputValue.match(expression);
     if(matchOperation === null || Number.isNaN(numberA) || Number.isNaN(numberB)) {
-        updateResult('Invalid operator');
+        updateResult('Expression not recognized.');
         return;
     }
     const operator = matchOperation[0];
