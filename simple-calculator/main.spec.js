@@ -49,7 +49,14 @@ describe('main.js', () => {
             expect(Calculator.prototype.divide).toHaveBeenCalled();
             expect(spy).toHaveBeenCalledWith(2);
         });
-        xit('calls updateResult');
+        it('calls updateResult (exmaple of using callThrough)', () => {
+            spyOn(window,'updateResult');
+            spyOn(Calculator.prototype, 'multiply').and.callThrough();
+            calculate('5*5');
+            expect(window.updateResult).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledWith(25);
+            
+        });
     });
     describe('updateResult()', () => {
         beforeAll(() => {
