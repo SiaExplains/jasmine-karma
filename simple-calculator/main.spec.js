@@ -69,6 +69,26 @@ describe('main.js', () => {
             expect(window.updateResult).toHaveBeenCalledWith('it works');
             
         });
+
+        it('calls updateResult (exmaple of using returnValue)', () => {
+
+            spyOn(window,'updateResult');
+            spyOn(Calculator.prototype, 'multiply').and.returnValue('it works');
+            calculate('5*5');
+            expect(window.updateResult).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledWith('it works');
+            
+        });
+        it('calls updateResult (exmaple of using returnValues)', () => {
+            // return multiple values per each call
+            spyOn(window,'updateResult');
+            spyOn(Calculator.prototype, 'add').and.returnValues(null,'it works');
+            calculate('5+5');
+            expect(window.updateResult).toHaveBeenCalled();
+            // the null value will be ignore and updateResult function won't react to have been called
+            expect(window.updateResult).toHaveBeenCalledWith('it works');
+            
+        });
     });
     describe('updateResult()', () => {
         beforeAll(() => {
