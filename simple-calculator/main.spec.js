@@ -50,11 +50,23 @@ describe('main.js', () => {
             expect(spy).toHaveBeenCalledWith(2);
         });
         it('calls updateResult (exmaple of using callThrough)', () => {
+            // // callThrough allow to execute real implementation of function
             spyOn(window,'updateResult');
             spyOn(Calculator.prototype, 'multiply').and.callThrough();
             calculate('5*5');
             expect(window.updateResult).toHaveBeenCalled();
             expect(window.updateResult).toHaveBeenCalledWith(25);
+            
+        });
+        it('calls updateResult (exmaple of using callFake)', () => {
+            // callFake allow to execute a specific custom implementation asepct of function
+            spyOn(window,'updateResult');
+            spyOn(Calculator.prototype, 'multiply').and.callFake((n) => {
+                return 'it works'
+            })
+            calculate('5*5');
+            expect(window.updateResult).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledWith('it works');
             
         });
     });
