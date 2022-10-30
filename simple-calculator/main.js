@@ -35,3 +35,9 @@ function calculate(inputValue) {
     }
     updateResult(result);
 }
+
+function showVersion() {
+    const calculator = new Calculator();
+    const element = document.getElementById('version');
+    element.innerText = calculator.version;
+}

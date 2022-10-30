@@ -116,4 +116,18 @@ describe('main.js', () => {
             expect(this.element.innerText).toBe('5');
         });
     });
+
+    describe('showVersion', () => {
+      it('calls calculator version', () => {
+        spyOn(document, 'getElementById').and.returnValue({
+            innerText: null
+        });
+        const spy = spyOnProperty(Calculator.prototype, 'version','get');
+
+        showVersion();
+
+        expect(spy).toHaveBeenCalled();
+      })
+    })
+    
 })
