@@ -89,6 +89,14 @@ describe('main.js', () => {
             expect(window.updateResult).toHaveBeenCalledWith('it works');
             
         });
+
+        it('does not handle errors', () => {
+            spyOn(Calculator.prototype, 'multiply').and.throwError('some error')
+            
+            expect(() => {
+                calculate('5*5');
+            }).toThrowError('some error')
+        });
     });
     describe('updateResult()', () => {
         beforeAll(() => {
