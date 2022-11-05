@@ -13,5 +13,6 @@
         "karma": "^6.4.1",
         "karma-jasmine": "^5.1.0",
         "karma-jasmine-matchers": "^5.0.0"
-    }
+    },
+    "dependencies": {}
 }

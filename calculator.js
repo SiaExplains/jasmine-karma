@@ -24,7 +24,6 @@ Calculator.prototype.divide = function(n){
 
 Object.defineProperty(Calculator.prototype, 'version', {
     get: function() {
-        console.log('trying to send request...');
         return fetch('http://localhost:4000/calc')
         .then((data) => {
             return data.json();
