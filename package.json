@@ -1,0 +1,11 @@
+{
+    "name": "jasmine-testing-course",
+    "version": "1.0.0",
+    "description": "I tried to cover all exercises of following tutorial: Unit testing your Javascript with jasmine by Created by Juan Lizarazo and Reynaldo Pena.",
+    "main": "main.js",
+    "scripts": {
+        "test": "karma start"
+    },
+    "author": "Siavash Ghanbari",
+    "license": "ISC"
+}
