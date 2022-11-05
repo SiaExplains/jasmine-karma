@@ -11,8 +11,9 @@
     "devDependencies": {
         "jasmine-core": "^4.5.0",
         "karma": "^6.4.1",
+        "karma-chrome-launcher": "^3.1.1",
         "karma-jasmine": "^5.1.0",
-        "karma-jasmine-matchers": "^5.0.0"
-    },
-    "dependencies": {}
+        "karma-jasmine-matchers": "^5.0.0",
+        "puppeteer": "^19.2.2"
+    }
 }
