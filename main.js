@@ -19,7 +19,7 @@ function calculate(inputValue) {
     const calculator = new Calculator();
     calculator.add(numberA);
     let result;
-    console.log(operator)
+
     if(operator === '+') {
         
         result = calculator.add(numberB);

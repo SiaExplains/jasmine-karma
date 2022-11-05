@@ -2,12 +2,10 @@ describe('calculator.js',() => {
     let calculator;
     let calculator2;
     beforeEach(() => {
-        console.log('beforeEach()');
         calculator = new Calculator();
         calculator2 = new Calculator();
     });
     afterEach(() => {
-        console.log('afterEach()');
     });
 
     describe('Calculator', () => {
