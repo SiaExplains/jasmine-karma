@@ -39,5 +39,7 @@ function calculate(inputValue) {
 function showVersion() {
     const calculator = new Calculator();
     const element = document.getElementById('version');
-    element.innerText = calculator.version;
+    calculator.version.then(function(data) {
+        element.innerText = data.version;
+    })
 }

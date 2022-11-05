@@ -88,6 +88,18 @@ describe('calculator.js',() => {
                 expect(wrapperFunction).toThrowError(Error, 'Cannot divide by zero');
             });
         });
+        describe('get version', () => {
+            it('fetches version from external source', (done) => {
+                spyOn(window, 'fetch').and.returnValue(Promise.resolve(
+                    new Response('{"version": "0.1"}')
+                ));
+                calculator.version.then((data) => {
+                    expect(data.version).toEqual('0.1');
+
+                    done();
+                })
+            })
+        })
     });
     
 });

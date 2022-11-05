@@ -118,15 +118,19 @@ describe('main.js', () => {
     });
 
     describe('showVersion', () => {
-      it('calls calculator version', () => {
+      it('calls calculator version', (done) => {
         spyOn(document, 'getElementById').and.returnValue({
             innerText: null
         });
-        const spy = spyOnProperty(Calculator.prototype, 'version','get');
+
+        const spy = spyOnProperty(Calculator.prototype, 'version','get').and.returnValue(Promise.resolve(
+            new Response('{"version": "0.1"}')
+        ));
 
         showVersion();
 
         expect(spy).toHaveBeenCalled();
+        done();
       })
     })
     
