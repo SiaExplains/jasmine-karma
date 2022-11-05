@@ -7,5 +7,8 @@
         "test": "karma start"
     },
     "author": "Siavash Ghanbari",
-    "license": "ISC"
+    "license": "ISC",
+    "devDependencies": {
+        "karma": "^6.4.1"
+    }
 }
